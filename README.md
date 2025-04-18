@@ -8,6 +8,12 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 $ yarn
 ```
 
+### Generate docs
+
+```
+$ node scripts/generate-docs.js
+```
+
 ### Local Development
 
 ```
