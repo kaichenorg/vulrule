@@ -1,0 +1,72 @@
+{
+  "ruleCategories": [
+    {
+      "name": "初始化",
+      "count": "160",
+      "icon": "🚀",
+      "color": "#FBBC05"
+    },
+    {
+      "name": "参数检查",
+      "count": "215",
+      "icon": "🔍",
+      "color": "#8F44AD"
+    },
+    {
+      "name": "返回值检查",
+      "count": "210",
+      "icon": "✅",
+      "color": "#F39C12"
+    },
+    {
+      "name": "API配对",
+      "count": "3032",
+      "icon": "🔄",
+      "color": "#4285F4"
+    }
+  ],
+  "libraryCategories": [
+    {
+      "name": "Linux kernel",
+      "count": "2503"
+    },
+    {
+      "name": "openssl",
+      "count": "351"
+    },
+    {
+      "name": "libevent",
+      "count": "180"
+    },
+    {
+      "name": "libzip",
+      "count": "86"
+    },
+    {
+      "name": "libdbus",
+      "count": "77"
+    },
+    {
+      "name": "其他库",
+      "count": "420"
+    }
+  ],
+  "toolCategories": [
+    {
+      "name": "APISpecGen",
+      "count": "2503"
+    },
+    {
+      "name": "ChatDetector",
+      "count": "462"
+    },
+    {
+      "name": "GPTAid",
+      "count": "442"
+    },
+    {
+      "name": "AURC",
+      "count": "210"
+    }
+  ]
+}
