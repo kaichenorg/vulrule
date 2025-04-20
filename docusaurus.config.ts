@@ -11,14 +11,14 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-vulnerability-rules-site.example.com',
+  url: 'https://5c4lar.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/vulrule/',
 
   // GitHub pages deployment config.
-  organizationName: 'your-org', 
-  projectName: 'vulnerability-rules', 
+  organizationName: '5c4lar', 
+  projectName: 'vulrule', 
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -111,7 +111,7 @@ const config: Config = {
           label: '规则生成工具',
         },
         {
-          href: 'https://github.com/your-org/vulnerability-rules',
+          href: 'https://github.com/5c4lar/vulrule',
           label: 'GitHub',
           position: 'right',
         },
@@ -155,7 +155,7 @@ const config: Config = {
             },
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/your-org/vulnerability-rules/issues',
+              href: 'https://github.com/5c4lar/vulrule/issues',
             },
           ],
         },
