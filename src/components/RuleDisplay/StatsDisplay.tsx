@@ -131,7 +131,7 @@ export default function StatsDisplay(): React.ReactElement {
                       {category.icon}
                     </div>
                     <div className={styles.statLabel}>
-                      <a href={`/rules/${categoryPathMap[category.name] || ''}`}>{category.name}</a>
+                      <a href={`rules/${categoryPathMap[category.name] || ''}`}>{category.name}</a>
                     </div>
 
                     <div className={styles.statBarContainer}>
@@ -160,7 +160,7 @@ export default function StatsDisplay(): React.ReactElement {
                       {idx + 1}
                     </div>
                     <div className={styles.statLabel}>
-                      <a href={library.name === "其他库" ? "/libraries" : `/libraries/${library.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`}>{library.name}</a>
+                      <a href={library.name === "其他库" ? "libraries" : `libraries/${library.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`}>{library.name}</a>
                     </div>
                     <div className={styles.statBarContainer}>
                       <div
@@ -176,7 +176,7 @@ export default function StatsDisplay(): React.ReactElement {
                 ))}
                 {statsData.libraryCategories.length > 6 && (
                   <div className={styles.viewMore}>
-                    <a href="/libraries">查看更多 API ...</a>
+                    <a href="libraries">查看更多 API ...</a>
                   </div>
                 )}
               </div>
@@ -193,7 +193,7 @@ export default function StatsDisplay(): React.ReactElement {
                       {tool.name.charAt(0).toUpperCase()}
                     </div>
                     <div className={styles.statLabel}>
-                      <a href={`/tools/${tool.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`}>{tool.name}</a>
+                      <a href={`tools/${tool.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}`}>{tool.name}</a>
                     </div>
                     <div className={styles.statBarContainer}>
                       <div
@@ -209,7 +209,7 @@ export default function StatsDisplay(): React.ReactElement {
                 ))}
                 {statsData.toolCategories.length > 6 && (
                   <div className={styles.viewMore}>
-                    <a href="/tools">查看所有工具 ...</a>
+                    <a href="tools">查看所有工具 ...</a>
                   </div>
                 )}
               </div>
