@@ -1,0 +1,12 @@
+.authNavbarContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 996px) {
+  .authNavbarContainer {
+    justify-content: center;
+    padding: 1rem 0;
+  }
+}

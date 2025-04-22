@@ -60,6 +60,14 @@ const config: Config = {
         },
       },
     ],
+    // Add docusaurus-plugin-dotenv plugin here
+    [
+      require.resolve('docusaurus-plugin-dotenv'),
+      {
+        path: './.env', // Path to your .env file
+        systemvars: true, // Load all system variables as well
+      },
+    ],
   ],
 
   presets: [

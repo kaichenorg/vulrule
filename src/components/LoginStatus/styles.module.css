@@ -1,0 +1,48 @@
+.loginStatusContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userEmail {
+  font-size: 0.9rem;
+  margin-right: 8px;
+  color: var(--ifm-navbar-link-color);
+}
+
+.logoutButton {
+  padding: 4px 8px;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--ifm-navbar-link-color);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.loginButton {
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  color: white;
+}

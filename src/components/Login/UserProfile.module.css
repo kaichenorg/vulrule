@@ -1,0 +1,44 @@
+.profileContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.profilePicture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.displayName {
+  font-weight: bold;
+  margin: 0;
+}
+
+.email {
+  font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.logoutButton {
+  background-color: transparent;
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
