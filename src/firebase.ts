@@ -1,9 +1,7 @@
-// Import Firebase dependencies
 import { initializeApp } from "firebase/app";
 import { Analytics, getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
-// Firebase configuration from environment variables
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -14,15 +12,13 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 // Initialize Analytics only in browser environment
-let analytics: Analytics | undefined = undefined;
+let analytics: Analytics | undefined;
 if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);
 }
 
-const auth = getAuth(app);
-
-export { auth, analytics };
+export { app, auth, analytics };

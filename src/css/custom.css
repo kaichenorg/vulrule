@@ -140,3 +140,27 @@
     column-count: 1;
   }
 }
+
+/* Navbar login item styling */
+.navbar-login-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+/* Position the login status container properly in the navbar */
+#login-status-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Make sure login button is visible on mobile devices */
+@media (max-width: 996px) {
+  .navbar-login-item {
+    display: flex !important;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
