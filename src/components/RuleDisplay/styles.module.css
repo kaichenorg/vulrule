@@ -74,7 +74,10 @@
   border-radius: 6px;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  /* Removing full border and replacing with border only on top, left, and right */
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+  border-right: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .codeBlock pre {
