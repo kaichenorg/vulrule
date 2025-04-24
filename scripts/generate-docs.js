@@ -270,7 +270,7 @@ ${api} 是 ${library} 库中的一个API。该API属于 **${displayCategory}** �
 
 ${apiRules.map((rule, index) => {
   const toolInfo = rule.tool_name ? 
-    `<div className="rule-tool-info">由 <a href="/tools/${sanitizeFilename(rule.tool_name)}">${rule.tool_name}</a> 生成</div>` : '';
+    `由 [${rule.tool_name}](/tools/${sanitizeFilename(rule.tool_name)}) 生成` : '';
   
   return `${toolInfo}
 <RuleDisplay
