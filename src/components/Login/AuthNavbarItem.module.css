@@ -2,11 +2,97 @@
   display: flex;
   align-items: center;
   position: relative;
+  height: 100%;
 }
 
+.loginButton {
+  display: flex;
+  align-items: center;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.loginButton:hover {
+  background-color: var(--ifm-color-primary-darker);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.userProfileContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.userProfileContainer:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.profileDropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 280px;
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  z-index: 1000;
+  overflow: hidden;
+  transform-origin: top right;
+  animation: dropdownAppear 0.2s ease-out;
+}
+
+@keyframes dropdownAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile view adjustments */
 @media (max-width: 996px) {
   .authNavbarContainer {
     justify-content: center;
     padding: 1rem 0;
+  }
+  
+  .profileDropdown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+    animation: mobileDropdownAppear 0.3s ease-out;
+  }
+  
+  @keyframes mobileDropdownAppear {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -45%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
   }
 }

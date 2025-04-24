@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+
+    // Allow users to read their own user profile
+    match /users/{userId} {
+      // Users can read their own profiles
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // Admins can read all user profiles for approval purposes
+      allow read: if isAdmin();
+      
+      // Allow users to create their own profile during registration
+      allow create: if request.auth != null && request.auth.uid == userId;
+      
+      // Users can update their own non-critical fields
+      allow update: if request.auth != null && 
+                    request.auth.uid == userId &&
+                    !("isAdmin" in request.resource.data) &&
+                    !("approvalStatus" in request.resource.data);
+      
+      // Only allow administrators to update approval status
+      allow update: if isAdmin();
+    }
+    
+    // Collection for pending approvals - readable by admins
+    match /pendingApprovals/{userId} {
+      allow read: if isAdmin();
+      // Allow creation during user registration
+      allow create: if request.auth != null && request.auth.uid == userId;
+      // Only admins can delete (after approval/rejection)
+      allow delete: if isAdmin();
+    }
+    
+    // Default deny all other paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

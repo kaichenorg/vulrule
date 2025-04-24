@@ -1,44 +1,153 @@
 .profileContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1.5rem;
+  gap: 1.2rem;
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .profilePicture {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--ifm-color-primary);
+  padding: 2px;
+  background-color: white;
 }
 
 .userInfo {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .displayName {
-  font-weight: bold;
+  font-weight: 600;
   margin: 0;
+  font-size: 1.2rem;
+  color: var(--ifm-heading-color);
 }
 
 .email {
-  font-size: 0.8rem;
-  margin: 0;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0.3rem 0 0.8rem 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.verificationStatus {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.verified {
+  color: #4caf50;
+  font-weight: 500;
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.unverified {
+  color: #ff9800;
+  font-weight: 500;
+  background-color: rgba(255, 152, 0, 0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.verifyButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.verifyButton:hover {
+  background-color: var(--ifm-color-primary-darker);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.verifyButton:disabled {
+  background-color: var(--ifm-color-emphasis-300);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.7;
+}
+
+.message {
+  color: var(--ifm-color-primary);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: rgba(46, 133, 85, 0.1);
+  border: 1px solid rgba(46, 133, 85, 0.3);
+}
+
+.error {
+  color: #d32f2f;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: rgba(211, 47, 47, 0.1);
+  border: 1px solid rgba(211, 47, 47, 0.3);
 }
 
 .logoutButton {
   background-color: transparent;
-  border: 1px solid var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 280px;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
 }
 
 .logoutButton:hover {
-  background-color: var(--ifm-color-primary);
-  color: white;
+  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-emphasis-800);
 }
