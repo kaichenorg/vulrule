@@ -29,13 +29,13 @@ title: 关于我们
 3. 报告错误和提出改进建议
 4. 完善文档和翻译
 
-请访问我们的 [GitHub 仓库](https://github.com/5c4lar/vulrule) 了解更多贡献方式。
+请访问我们的 [GitHub 仓库](https://github.com/kaichenorg/vulrule) 了解更多贡献方式。
 
 ## 联系我们
 
 如有任何问题或建议，请通过以下方式联系我们：
 
-- GitHub Issues: [提交问题](hhttps://github.com/5c4lar/vulrule/issues)
+- GitHub Issues: [提交问题](hhttps://github.com/kaichenorg/vulrule/issues)
 - 邮箱: contact@example.com
 
 感谢您对漏洞规则库的关注和支持！

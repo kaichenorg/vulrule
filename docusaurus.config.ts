@@ -10,13 +10,13 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://5c4lar.github.io",
+  url: "https://kaichenorg.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/vulrule/",
 
   // GitHub pages deployment config.
-  organizationName: "5c4lar",
+  organizationName: "kaichenorg",
   projectName: "vulrule",
 
   onBrokenLinks: "throw",
@@ -121,7 +121,7 @@ const config: Config = {
           className: "navbar-login-item",
         },
         {
-          href: "https://github.com/5c4lar/vulrule",
+          href: "https://github.com/kaichenorg/vulrule",
           label: "GitHub",
           position: "right",
         },
@@ -165,7 +165,7 @@ const config: Config = {
             },
             {
               label: "GitHub Issues",
-              href: "https://github.com/5c4lar/vulrule/issues",
+              href: "https://github.com/kaichenorg/vulrule/issues",
             },
           ],
         },
