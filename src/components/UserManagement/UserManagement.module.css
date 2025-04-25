@@ -66,12 +66,14 @@
 
 .userList {
   margin-top: 20px;
-  overflow-x: auto;
   width: 100%;
+  overflow-x: auto; /* This already enables horizontal scrolling */
+  display: block;
 }
 
 .userList table {
   width: 100%;
+  min-width: 800px; /* Ensures table has minimum width to trigger scrolling when needed */
   border-collapse: separate;
   border-spacing: 0;
   margin: 0 auto;
