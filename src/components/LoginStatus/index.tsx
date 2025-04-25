@@ -17,28 +17,33 @@ export default function LoginStatus(): JSX.Element {
     setShowLoginModal(false);
   };
 
+  // 处理登出操作
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error("Failed to log out", error);
+    }
+  };
+
   return (
     <div className={styles.loginStatusContainer}>
       {currentUser ? (
-        <div className={styles.userContainer}>
-          <span className={styles.userEmail}>{currentUser.email}</span>
-          <button 
-            onClick={() => logout()} 
-            className={styles.logoutButton}
-            title="退出登录"
-          >
-            退出
-          </button>
-        </div>
+        <button 
+          onClick={handleLogout} 
+          className={styles.authButton}
+          title="退出登录"
+        >
+          退出
+        </button>
       ) : (
         <>
-          <a 
-            href="/" 
-            className={styles.loginButton}
+          <button 
+            className={styles.authButton}
             onClick={handleLoginClick}
           >
             登录
-          </a>
+          </button>
           
           {/* 登录模态框 */}
           {showLoginModal && (

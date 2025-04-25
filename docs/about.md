@@ -36,6 +36,6 @@ title: 关于我们
 如有任何问题或建议，请通过以下方式联系我们：
 
 - GitHub Issues: [提交问题](hhttps://github.com/kaichenorg/vulrule/issues)
-- 邮箱: contact@example.com
+- 邮箱: kaichenorg@gmail.com
 
 感谢您对漏洞规则库的关注和支持！

@@ -32,29 +32,6 @@ const config: Config = {
 
   // Add docusaurus-lunr-search plugin here
   plugins: [
-    [
-      require.resolve("docusaurus-lunr-search"),
-      {
-        // 中文分词配置
-        languages: ["zh", "en"],
-        // 这里可以使用 jieba 分词器来提高中文搜索质量
-        language: ["en", "zh"],
-        // 为汉语指定分词器
-        languageTokenizer: {
-          zh: (data) => {
-            try {
-              // 检查是否安装了 jieba 分词
-              const { cut } = require("@node-rs/jieba");
-              // 使用 jieba 分词进行中文分词
-              return cut(data, true);
-            } catch (e) {
-              // 如果没有安装 jieba，使用默认方法
-              return data.split(/[\s\p{Punctuation}]+/u);
-            }
-          },
-        },
-      },
-    ],
     // Add docusaurus-plugin-dotenv plugin here
     [
       require.resolve("docusaurus-plugin-dotenv"),
@@ -113,12 +90,12 @@ const config: Config = {
           position: "left",
           label: "规则生成工具",
         },
-        // 添加登录状态组件作为HTML项
+        // 将登录状态从HTML组件改为常规navbar item
         {
-          type: "html",
+          to: "#login",
           position: "right",
-          value: '<div id="login-status-container"></div>',
-          className: "navbar-login-item",
+          label: "登录",
+          className: "navbar-login-button",
         },
         {
           href: "https://github.com/kaichenorg/vulrule",
