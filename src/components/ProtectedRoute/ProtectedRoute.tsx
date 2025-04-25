@@ -53,30 +53,30 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
       );
     }
     
-    // // 用户已登录、邮箱已验证，但尚未通过管理员审批
-    // if (currentUser && currentUser.emailVerified && userStatus?.approvalStatus !== 'approved') {
-    //   return (
-    //     <div className={styles.protectedContainer}>
-    //       <div className={styles.icon}>⏳</div>
-    //       <h2 className={styles.title}>
-    //         {userStatus?.approvalStatus === 'pending' 
-    //           ? '您的账号正在等待审批' 
-    //           : userStatus?.approvalStatus === 'rejected'
-    //             ? '您的账号申请未获通过'
-    //             : '账号状态异常'}
-    //       </h2>
-    //       <p className={styles.description}>
-    //         {userStatus?.approvalStatus === 'pending' 
-    //           ? '您的账号注册申请已提交，正在等待管理员审核。请耐心等待，审核通过后您将收到通知。' 
-    //           : userStatus?.approvalStatus === 'rejected'
-    //             ? '很抱歉，您的账号申请未获通过。如有疑问，请联系管理员。'
-    //             : '您的账号状态异常，请联系管理员处理。'}
-    //       </p>
-    //       <div className={styles.divider}></div>
-    //       <UserProfile />
-    //     </div>
-    //   );
-    // }
+    // 用户已登录、邮箱已验证，但尚未通过管理员审批
+    if (currentUser && currentUser.emailVerified && userStatus?.approvalStatus !== 'approved') {
+      return (
+        <div className={styles.protectedContainer}>
+          <div className={styles.icon}>⏳</div>
+          <h2 className={styles.title}>
+            {userStatus?.approvalStatus === 'pending' 
+              ? '您的账号正在等待审批' 
+              : userStatus?.approvalStatus === 'rejected'
+                ? '您的账号申请未获通过'
+                : '账号状态异常'}
+          </h2>
+          <p className={styles.description}>
+            {userStatus?.approvalStatus === 'pending' 
+              ? '您的账号注册申请已提交，正在等待管理员审核。请耐心等待，审核通过后您将收到通知。' 
+              : userStatus?.approvalStatus === 'rejected'
+                ? '很抱歉，您的账号申请未获通过。如有疑问，请联系管理员。'
+                : '您的账号状态异常，请联系管理员处理。'}
+          </p>
+          <div className={styles.divider}></div>
+          <UserProfile />
+        </div>
+      );
+    }
   }
 
   // 如果不是受保护路径，或用户已通过身份验证且已验证邮箱并且已获得审批，则渲染子组件
