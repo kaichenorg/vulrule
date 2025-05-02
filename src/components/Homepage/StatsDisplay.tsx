@@ -38,11 +38,11 @@ const fallbackRuleCategories: RuleCategory[] = [
 ];
 
 const fallbackLibraryCategories: LibraryCategory[] = [
-  { name: "Loading...", count: "0" },
+  // { name: "Loading...", count: "0" },
 ];
 
 const fallbackToolCategories: ToolCategory[] = [
-  { name: "Loading...", count: "0" },
+  // { name: "Loading...", count: "0" },
 ];
 
 // Function to calculate bar width with a baseline minimum and square root scaling for better visualization
@@ -268,7 +268,7 @@ export default function StatsDisplay(): React.ReactElement {
                     <div className={styles.statLabel}>
                       <Link
                         to={
-                          library.name === "Others"
+                          library.name.toLowerCase() === "others"
                             ? "/category/projects"
                             : `/projects/${library.name.toLowerCase()}`
                         }

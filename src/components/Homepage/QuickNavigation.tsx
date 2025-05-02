@@ -35,7 +35,7 @@ export default function QuickNavigation(): JSX.Element {
 
           {/* Navigation Card 2 */}
           <div className="col col--3 margin-bottom--lg">
-            <Link to="/category/type" className={styles.navCard} style={{ textDecoration: 'none' }}>
+            <Link to="/category/types" className={styles.navCard} style={{ textDecoration: 'none' }}>
               <div className={styles.navIcon}>📋</div>
               <div className={styles.navTitle}>
                 <Translate id="homepage.nav.rule-category.title" description="Rule Category Title">

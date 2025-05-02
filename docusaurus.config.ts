@@ -63,13 +63,15 @@ const config: Config = {
 
         // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
         // forceIgnoreNoIndex: true,
+
+        docsRouteBasePath: "/",
       }),
     ],
   ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/antivirus.png',
     navbar: {
       title: 'Vulrule',
       logo: {
