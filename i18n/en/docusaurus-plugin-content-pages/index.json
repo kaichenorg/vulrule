@@ -1,0 +1,42 @@
+{
+  "homepage.getStarted": {
+    "message": "Get Started - Quick Guide ⏱️",
+    "description": "Get started button"
+  },
+  "homepage.tagline": {
+    "message": "Helping developers prevent common security vulnerabilities",
+    "description": "Website tagline"
+  },
+  "homepage.subtitle": {
+    "message": "Vulnerability Rule Repository",
+    "description": "Website subtitle"
+  },
+  "homepage.description": {
+    "message": "Vulrule provides comprehensive security coding rules, API usage guidelines, and vulnerability detection rules to help developers write more secure code",
+    "description": "Website description"
+  },
+  "homepage.features.easyToUse": {
+    "message": "Easy to Use",
+    "description": "Feature title - Easy to use"
+  },
+  "homepage.features.easyToUseDescription": {
+    "message": "Vulrule's rule repository is designed to be easy to use, helping you quickly understand and apply various security rules.",
+    "description": "Feature description - Easy to use"
+  },
+  "homepage.features.focusOnSecurity": {
+    "message": "Focus on Security",
+    "description": "Feature title - Focus on security"
+  },
+  "homepage.features.focusOnSecurityDescription": {
+    "message": "Vulrule lets you focus on code security with our comprehensive rule documentation. Integrate security rules into your code development process.",
+    "description": "Feature description - Focus on security"
+  },
+  "homepage.features.comprehensiveRules": {
+    "message": "Comprehensive Rule Library",
+    "description": "Feature title - Comprehensive rules"
+  },
+  "homepage.features.comprehensiveRulesDescription": {
+    "message": "Includes many API security usage rules, covering common libraries and frameworks, helping developers avoid common security vulnerabilities.",
+    "description": "Feature description - Comprehensive rules"
+  }
+}

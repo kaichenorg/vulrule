@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "Vulrule",
+    "description": "The title in the navbar"
+  },
+  "item.label.rules": {
+    "message": "Rules",
+    "description": "Navbar item with label rules"
+  },
+  "logo.alt": {
+    "message": "Vulrule Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.projects": {
+    "message": "Projects",
+    "description": "Navbar item with label projects"
+  },
+  "item.label.tools": {
+    "message": "Tools",
+    "description": "Navbar item with label tools"
+  },
+  "item.label.type": {
+    "message": "Types",
+    "description": "Navbar item with label type"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Projects.link.generated-index.title": {
+    "message": "Projects",
+    "description": "The generated-index page title for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Projects.link.generated-index.description": {
+    "message": "View the rules by projects.",
+    "description": "The generated-index page description for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ffmpeg Rules": {
+    "message": "ffmpeg Rules",
+    "description": "The label for category ffmpeg Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ldap Rules": {
+    "message": "ldap Rules",
+    "description": "The label for category ldap Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libcurl Rules": {
+    "message": "libcurl Rules",
+    "description": "The label for category libcurl Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libdbus Rules": {
+    "message": "libdbus Rules",
+    "description": "The label for category libdbus Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libevent Rules": {
+    "message": "libevent Rules",
+    "description": "The label for category libevent Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libexpat Rules": {
+    "message": "libexpat Rules",
+    "description": "The label for category libexpat Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libgnutls Rules": {
+    "message": "libgnutls Rules",
+    "description": "The label for category libgnutls Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libmysql Rules": {
+    "message": "libmysql Rules",
+    "description": "The label for category libmysql Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libpcap Rules": {
+    "message": "libpcap Rules",
+    "description": "The label for category libpcap Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libxml2 Rules": {
+    "message": "libxml2 Rules",
+    "description": "The label for category libxml2 Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libzip Rules": {
+    "message": "libzip Rules",
+    "description": "The label for category libzip Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.linux kernel Rules": {
+    "message": "linux kernel Rules",
+    "description": "The label for category linux kernel Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.mbedtls Rules": {
+    "message": "mbedtls Rules",
+    "description": "The label for category mbedtls Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.openssl Rules": {
+    "message": "openssl Rules",
+    "description": "The label for category openssl Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.sqlite3 Rules": {
+    "message": "sqlite3 Rules",
+    "description": "The label for category sqlite3 Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.zlib Rules": {
+    "message": "zlib Rules",
+    "description": "The label for category zlib Rules in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools": {
+    "message": "Tools",
+    "description": "The label for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools.link.generated-index.title": {
+    "message": "Tools",
+    "description": "The generated-index page title for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools.link.generated-index.description": {
+    "message": "View the rules by tool.",
+    "description": "The generated-index page description for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types": {
+    "message": "Types",
+    "description": "The label for category Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types.link.generated-index.title": {
+    "message": "Types",
+    "description": "The generated-index page title for category Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types.link.generated-index.description": {
+    "message": "View the rules by type.",
+    "description": "The generated-index page description for category Types in sidebar tutorialSidebar"
+  }
+}

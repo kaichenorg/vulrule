@@ -1,0 +1,106 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Projects": {
+    "message": "项目",
+    "description": "The label for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Projects.link.generated-index.title": {
+    "message": "项目",
+    "description": "The generated-index page title for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Projects.link.generated-index.description": {
+    "message": "按项目查看规则。",
+    "description": "The generated-index page description for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools": {
+    "message": "工具",
+    "description": "The label for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools.link.generated-index.title": {
+    "message": "工具",
+    "description": "The generated-index page title for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools.link.generated-index.description": {
+    "message": "按工具查看规则。",
+    "description": "The generated-index page description for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types": {
+    "message": "类型",
+    "description": "The label for category Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types.link.generated-index.title": {
+    "message": "类型",
+    "description": "The generated-index page title for category Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Types.link.generated-index.description": {
+    "message": "按类型查看规则。",
+    "description": "The generated-index page description for category Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ffmpeg": {
+    "message": "ffmpeg",
+    "description": "The label for category ffmpeg in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ldap": {
+    "message": "ldap",
+    "description": "The label for category ldap in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libcurl": {
+    "message": "libcurl",
+    "description": "The label for category libcurl in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libdbus": {
+    "message": "libdbus",
+    "description": "The label for category libdbus in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libevent": {
+    "message": "libevent",
+    "description": "The label for category libevent in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libexpat": {
+    "message": "libexpat",
+    "description": "The label for category libexpat in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libgnutls": {
+    "message": "libgnutls",
+    "description": "The label for category libgnutls in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libmysql": {
+    "message": "libmysql",
+    "description": "The label for category libmysql in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libpcap": {
+    "message": "libpcap",
+    "description": "The label for category libpcap in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libxml2": {
+    "message": "libxml2",
+    "description": "The label for category libxml2 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.libzip": {
+    "message": "libzip",
+    "description": "The label for category libzip in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.linux kernel": {
+    "message": "linux kernel",
+    "description": "The label for category linux kernel in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.mbedtls": {
+    "message": "mbedtls",
+    "description": "The label for category mbedtls in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.openssl": {
+    "message": "openssl",
+    "description": "The label for category openssl in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.sqlite3": {
+    "message": "sqlite3",
+    "description": "The label for category sqlite3 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.zlib": {
+    "message": "zlib",
+    "description": "The label for category zlib in sidebar tutorialSidebar"
+  }
+}

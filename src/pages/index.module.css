@@ -1,0 +1,38 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ .heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 自定义开始使用按钮样式 */
+.getStartedButton {
+  background-color: #ffffff;
+  color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+  font-weight: bold;
+}
+
+/* 深色模式下的按钮样式 */
+[data-theme='dark'] .getStartedButton {
+  background-color: #2a2a2a;
+  color: var(--ifm-color-primary-lightest);
+  border-color: var(--ifm-color-primary-lightest);
+}

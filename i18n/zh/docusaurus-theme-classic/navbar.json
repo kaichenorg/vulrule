@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "漏洞规则库",
+    "description": "The title in the navbar"
+  },
+  "item.label.rules": {
+    "message": "规则",
+    "description": "Navbar item with label rules"
+  },
+  "item.label.projects": {
+    "message": "项目",
+    "description": "Navbar item with label projects"
+  },
+  "item.label.tools": {
+    "message": "工具",
+    "description": "Navbar item with label tools"
+  },
+  "item.label.type": {
+    "message": "类型",
+    "description": "Navbar item with label type"
+  },
+  "logo.alt": {
+    "message": "Vulrule Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

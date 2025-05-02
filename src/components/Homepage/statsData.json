@@ -1,0 +1,72 @@
+{
+  "ruleCategories": [
+    {
+      "name": "parameter check",
+      "count": "215",
+      "icon": "🔍",
+      "color": "#8F44AD"
+    },
+    {
+      "name": "initialization",
+      "count": "160",
+      "icon": "🚀",
+      "color": "#FBBC05"
+    },
+    {
+      "name": "api pair",
+      "count": "3032",
+      "icon": "🔄",
+      "color": "#4285F4"
+    },
+    {
+      "name": "return value check",
+      "count": "210",
+      "icon": "✅",
+      "color": "#F39C12"
+    }
+  ],
+  "libraryCategories": [
+    {
+      "name": "linux kernel",
+      "count": "2503"
+    },
+    {
+      "name": "openssl",
+      "count": "351"
+    },
+    {
+      "name": "libevent",
+      "count": "180"
+    },
+    {
+      "name": "ffmpeg",
+      "count": "124"
+    },
+    {
+      "name": "libzip",
+      "count": "86"
+    },
+    {
+      "name": "others",
+      "count": "373"
+    }
+  ],
+  "toolCategories": [
+    {
+      "name": "GPTAid",
+      "count": "442"
+    },
+    {
+      "name": "AURC",
+      "count": "210"
+    },
+    {
+      "name": "APISpecGen",
+      "count": "2503"
+    },
+    {
+      "name": "ChatDetector",
+      "count": "462"
+    }
+  ]
+}
