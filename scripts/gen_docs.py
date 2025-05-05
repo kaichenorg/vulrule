@@ -66,7 +66,7 @@ def generate_api(args, data, docs_dir):
             api_name=rule["api_name"],
             description=escape_markdown(rule["rule"]["Description"]),
             label=rule["rule"]["Label"][0],
-            param_index=rule["rule"]["Parameter-index"][0] if "Parameter-index" in rule["rule"] else "",
+            param_index=rule["rule"]["Parameter-index"][0] if "Parameter-index" in rule["rule"] else "N/A",
             cwe_type=rule["rule"]["cweType-and-QLCode"][0]["cweType"][0],
             code=rule["rule"]["cweType-and-QLCode"][0]["QLCode"],
         )

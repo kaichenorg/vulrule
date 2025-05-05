@@ -349,7 +349,7 @@
     "message": "开始使用"
   },
   "siteConfig.title": {
-    "message": "Vulrule",
+    "message": "漏洞规则库",
     "description": "Title of the site"
   },
   "siteConfig.tagline": {
