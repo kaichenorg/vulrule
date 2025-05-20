@@ -1,0 +1,39 @@
+name: Test deployment
+
+on:
+  workflow_dispatch: # 允许手动触发
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://githubdocs.cn/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  test-deploy:
+    name: Test deployment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Setup Python # 新增：设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # 或者你指定的 Python 版本
+
+      - name: Install Python dependencies # 新增：安装 Python 依赖
+        run: pip install jinja2
+
+      - name: Generate English docs # 新增：运行 Python 脚本生成英文文档
+        run: python3 -m scripts.gen_docs --language en
+
+      - name: Generate Chinese docs # 新增：运行 Python 脚本生成中文文档
+        run: python3 -m scripts.gen_docs --language zh
+
+      - name: Test build website
+        run: yarn build 

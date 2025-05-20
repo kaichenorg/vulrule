@@ -262,10 +262,10 @@
     "message": "没有找到任何文档"
   },
   "theme.SearchBar.seeAllOutsideContext": {
-    "message": "查看"{context}"以外的全部结果"
+    "message": "查看\"{context}\"以外的全部结果"
   },
   "theme.SearchBar.searchInContext": {
-    "message": "查看"{context}"以内的全部结果"
+    "message": "查看\"{context}\"以内的全部结果"
   },
   "theme.SearchBar.seeAll": {
     "message": "查看全部结果"
@@ -275,7 +275,7 @@
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": ""{query}"的搜索结果",
+    "message": "\"{query}\"的搜索结果",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
@@ -287,7 +287,7 @@
   },
   "theme.SearchPage.documentsFound.plurals": {
     "message": "共找到 {count} 篇文档",
-    "description": "Pluralized label for "{count} documents found". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.noResultsText": {
     "message": "没有找到任何文档",
@@ -295,7 +295,7 @@
   },
   "theme.blog.post.plurals": {
     "message": "{count} 篇博文",
-    "description": "Pluralized label for "{count} posts". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
     "message": "{nPosts} 含有标签「{tagName}」",
