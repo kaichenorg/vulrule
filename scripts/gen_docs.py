@@ -70,8 +70,8 @@ def generate_api(args, data, docs_dir):
             cwe_type=rule["rule"]["cweType-and-QLCode"][0]["cweType"][0],
             code=rule["rule"]["cweType-and-QLCode"][0]["QLCode"],
         )
-        path = quote(f"projects/{normalize_name(rule['lib_name'])}/api_{normalize_name(rule['api_name'])}.md")
-        doc_path = docs_dir / "projects" / normalize_name(rule["lib_name"]) / f'api_{normalize_name(rule["api_name"])}.md'
+        path = quote(f"projects/{normalize_name(rule['lib_name'])}/{normalize_name(rule['api_name'])}.md")
+        doc_path = docs_dir / "projects" / normalize_name(rule["lib_name"]) / f'{normalize_name(rule["api_name"])}.md'
         doc_path.parent.mkdir(parents=True, exist_ok=True)
         with open(doc_path, "w", encoding="utf-8") as f:
             f.write(doc_content)
