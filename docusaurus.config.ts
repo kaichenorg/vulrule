@@ -31,6 +31,10 @@ const config: Config = {
     locales: ['en', 'zh'],
   },
 
+  clientModules: [
+    require.resolve('./src/clientModules/firstVisitRedirect.js'),
+  ],
+
   presets: [
     [
       'classic',

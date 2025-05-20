@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息登记</title>
+    <style>
+        :root {
+            --primary-color: #34A853;
+            --primary-hover: #2d9147;
+            --primary-light: rgba(52, 168, 83, 0.1);
+            --text-primary: #333;
+            --text-secondary: #666;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container { 
+            background-color: #ffffff; 
+            padding: 30px 40px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 720px; /* Increased width for project introduction */
+            text-align: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin-right: 20px;
+        }
+        .project-intro {
+            text-align: left;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .project-intro h1 {
+            font-size: 1.8em;
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+        }
+        .project-intro h2 {
+            font-size: 1.3em;
+            margin: 20px 0 10px;
+            color: var(--text-primary);
+        }
+        .project-intro p {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .project-intro ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .project-intro li {
+            margin: 5px 0;
+            color: var(--text-secondary);
+        }
+        .registration-form {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        form div {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        input[type="email"], input[type="text"] { 
+            padding: 12px; 
+            margin-top: 5px; 
+            width: calc(100% - 26px); /* Account for padding and border */
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+            font-size: 1em;
+        }
+        input[type="email"]:focus, input[type="text"]:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem var(--primary-light);
+            outline: none;
+        }
+        button[type="submit"], button { 
+            padding: 12px 20px; 
+            width: 100%;
+            border-radius: 4px; 
+            border: none; 
+            background-color: var(--primary-color); 
+            color: white; 
+            cursor: pointer; 
+            font-size: 1em;
+            transition: background-color 0.2s ease-in-out;
+        }
+        button[type="submit"]:hover:not(:disabled), button:hover:not(:disabled) { 
+            background-color: var(--primary-hover); 
+        }
+        button[type="submit"]:disabled, button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #formMessage { 
+            margin-top: 20px; 
+            font-weight: bold; 
+            min-height: 22px; /* Prevent layout shift */
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        #countdownMessage { 
+            margin-top: 25px; 
+            font-size: 0.9em; 
+            color: #777;
+            min-height: 1.2em; /* Prevent layout shift */
+            line-height: 1.5;
+        }
+        .lang-en, .lang-zh {
+            display: block; /* Display languages on separate lines */
+        }
+        .lang-zh {
+            margin-top: 4px; /* Optional: add some space between languages */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="project-intro">
+            <div class="logo-container">
+                <img src="/vulrule/img/antivirus.png" alt="Vulrule Logo" class="logo">
+                <h1>
+                    <span class="lang-en">Vulnerability Rule Library</span>
+                    <span class="lang-zh">漏洞规则库</span>
+                </h1>
+            </div>
+            <h2>
+                <span class="lang-en">Project Introduction</span>
+                <span class="lang-zh">项目简介</span>
+            </h2>
+            <p>
+                <span class="lang-en">The Vulnerability Rule Library is an open-source project dedicated to helping developers identify and avoid common security vulnerabilities. We collect, organize, and analyze security vulnerability patterns in various programming languages and commonly used libraries, providing corresponding preventive measures and best practices.</span>
+                <span class="lang-zh">漏洞规则库是一个致力于帮助开发者识别和避免常见安全漏洞的开源项目。我们收集、整理和分析各类编程语言和常用库中的安全漏洞模式，并提供相应的防范措施和最佳实践。</span>
+            </p>
+            <h2>
+                <span class="lang-en">Project Features</span>
+                <span class="lang-zh">项目特点</span>
+            </h2>
+            <ul>
+                <li>
+                    <span class="lang-en">Comprehensive Vulnerability Coverage: Covers various programming languages and commonly used libraries</span>
+                    <span class="lang-zh">全面的漏洞覆盖：涵盖多种编程语言和常用库</span>
+                </li>
+                <li>
+                    <span class="lang-en">Practical Rule Guidelines: Each rule comes with detailed explanations and example code</span>
+                    <span class="lang-zh">实用的规则指南：每条规则都附带详细说明和示例代码</span>
+                </li>
+                <li>
+                    <span class="lang-en">Continuous Updates: Tracks the latest security research and vulnerability reports</span>
+                    <span class="lang-zh">持续更新：跟踪最新的安全研究和漏洞报告</span>
+                </li>
+                <li>
+                    <span class="lang-en">Open Source Sharing: Community contributions and improvements are welcome</span>
+                    <span class="lang-zh">开源共享：欢迎社区贡献和完善</span>
+                </li>
+            </ul>
+        </div>
+        <div class="registration-form">
+            <h2>
+                <span class="lang-en"></span>
+                <span class="lang-zh"></span>
+            </h2>
+            <p>
+                <span class="lang-en"></span>
+                <span class="lang-zh"></span>
+            </p>
+            
+            <form id="registrationForm" action="https://formspree.io/f/mgvkqnyl" method="POST">
+                <div>
+                    <label for="emailInput">
+                        <span class="lang-en"></span>
+                        <span class="lang-zh"></span>
+                    </label>
+                    <input type="email" id="emailInput" name="email" required>
+                </div>
+                <div>
+                    <label for="organizationInput">
+                        <span class="lang-en"></span>
+                        <span class="lang-zh"></span>
+                    </label>
+                    <input type="text" id="organizationInput" name="organization" required>
+                </div>
+                <button type="submit" id="submitButton">
+                    <span class="lang-en"></span>
+                    <span class="lang-zh"></span>
+                </button>
+            </form>
+
+            <div id="formMessage">
+                <!-- Bilingual messages will be handled by JS -->
+            </div>
+            <div id="countdownMessage">
+                <span class="lang-en"></span>
+                <span class="lang-zh"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "Information Registration",
+                welcomeHeading: "Welcome!",
+                welcomeParagraph: "As a first-time visitor, you are invited to complete the following information. After submission, you will be automatically redirected to the main page.",
+                emailLabel: "Your Email Address:",
+                emailPlaceholder: "e.g., name@example.com",
+                organizationLabel: "Your Organization:",
+                organizationPlaceholder: "e.g., Your Company Name",
+                submitButton: "Submit Information",
+                submitButtonProcessing: "Processing...",
+                formMsgValidEmail: "Please enter a valid email address.",
+                formMsgValidOrg: "Please enter your organization.",
+                formMsgProcessing: "Processing your information...",
+                formMsgSuccess: "Submission successful! Thank you for registering.",
+                formMsgFailure: "Submission failed. Please try again.",
+                formMsgNetworkError: "Network error. Please check your connection and try again.",
+                countdownInitial: "Please complete and submit the form to continue.",
+                countdownInProgress: "{seconds} seconds until redirecting to the main page...",
+                countdownRedirecting: "Redirecting to the main page...",
+                redirectNow: "Redirect Now ({seconds}s)"
+            },
+            zh: {
+                pageTitle: "信息登记",
+                welcomeHeading: "欢迎访问！",
+                welcomeParagraph: "作为首次访问的用户，我们邀请您填写以下信息。提交后将自动跳转至主页。",
+                emailLabel: "您的邮箱地址：",
+                emailPlaceholder: "例如：name@example.com",
+                organizationLabel: "您的机构：",
+                organizationPlaceholder: "例如：贵公司名称",
+                submitButton: "提交信息",
+                submitButtonProcessing: "正在处理...",
+                formMsgValidEmail: "请输入有效的邮箱地址。",
+                formMsgValidOrg: "请输入您的机构名称。",
+                formMsgProcessing: "正在处理您的信息...",
+                formMsgSuccess: "提交成功！感谢您的登记。",
+                formMsgFailure: "提交失败，请重试。",
+                formMsgNetworkError: "网络错误，请检查您的连接并重试。",
+                countdownInitial: "请填写并提交表单以继续。",
+                countdownInProgress: "{seconds} 秒后将自动跳转到主页...",
+                countdownRedirecting: "正在跳转到主页...",
+                redirectNow: "立即跳转 ({seconds}秒)"
+            }
+        };
+
+        // Helper to set text directly for single elements (used for messages)
+        const setBilingualTextDirectly = (element, enText, zhText) => {
+            if (element) {
+                element.innerHTML = `<span class="lang-en">${enText}</span><span class="lang-zh">${zhText}</span>`;
+            }
+        };
+
+        function displayBilingualContent() {
+            // Set page title (can choose one language or combine)
+            document.title = translations.zh.pageTitle + " / " + translations.en.pageTitle;
+            document.documentElement.lang = 'zh-CN'; // Set a primary language for the page
+
+            // Helper to set text for bilingual elements
+            const setText = (selector, enKey, zhKey) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    const enSpan = element.querySelector('.lang-en');
+                    const zhSpan = element.querySelector('.lang-zh');
+                    if (enSpan) enSpan.textContent = translations.en[enKey];
+                    if (zhSpan) zhSpan.textContent = translations.zh[zhKey];
+                }
+            };
+            
+            setText('h2', 'welcomeHeading', 'welcomeHeading');
+            setText('p', 'welcomeParagraph', 'welcomeParagraph');
+            setText('label[for="emailInput"]', 'emailLabel', 'emailLabel');
+            setText('label[for="organizationInput"]', 'organizationLabel', 'organizationLabel');
+            
+            const submitBtn = document.getElementById('submitButton');
+            if (submitBtn) {
+                 const enSpan = submitBtn.querySelector('.lang-en');
+                 const zhSpan = submitBtn.querySelector('.lang-zh');
+                 if (enSpan) enSpan.textContent = translations.en.submitButton;
+                 if (zhSpan) zhSpan.textContent = translations.zh.submitButton;
+            }
+            
+            const emailInputEl = document.getElementById('emailInput');
+            if (emailInputEl) {
+                emailInputEl.placeholder = translations.en.emailPlaceholder + " / " + translations.zh.emailPlaceholder;
+            }
+            const organizationInputEl = document.getElementById('organizationInput');
+            if (organizationInputEl) {
+                organizationInputEl.placeholder = translations.en.organizationPlaceholder + " / " + translations.zh.organizationPlaceholder;
+            }
+
+            // Set initial countdown message
+            const countdownDiv = document.getElementById('countdownMessage');
+            if (countdownDiv.querySelector('.lang-en') && countdownDiv.querySelector('.lang-zh')) {
+                 setText('#countdownMessage', 'countdownInitial', 'countdownInitial');
+            } else { // Fallback if spans are not yet there (e.g. during initial load)
+                 setBilingualTextDirectly(countdownDiv, translations.en.countdownInitial, translations.zh.countdownInitial);
+            }
+        }
+
+        displayBilingualContent();
+        
+        const form = document.getElementById('registrationForm');
+        const emailInput = document.getElementById('emailInput');
+        const organizationInput = document.getElementById('organizationInput');
+        const submitButton = document.getElementById('submitButton');
+        const formMessageDiv = document.getElementById('formMessage');
+        const countdownMessageDiv = document.getElementById('countdownMessage');
+
+        const baseUrl = '/vulrule/'; 
+        const mainPageUrl = baseUrl; 
+        const redirectDelay = 10000; 
+        let countdownInterval = null;
+        let pageRedirectTimeout = null;
+
+        // 添加立即跳转函数
+        function redirectNow() {
+            if (countdownInterval) clearInterval(countdownInterval);
+            if (pageRedirectTimeout) clearTimeout(pageRedirectTimeout);
+            window.location.href = mainPageUrl;
+        }
+
+        // Function to update button text bilingually
+        function updateSubmitButtonText(enKey, zhKey) {
+            const enSpan = submitButton.querySelector('.lang-en');
+            const zhSpan = submitButton.querySelector('.lang-zh');
+            if (enSpan) enSpan.textContent = translations.en[enKey];
+            if (zhSpan) zhSpan.textContent = translations.zh[zhKey];
+        }
+
+        function startCountdownAndRedirect() {
+            let countdownSeconds = Math.floor(redirectDelay / 1000);
+            let redirectButton;
+            
+            emailInput.disabled = true;
+            organizationInput.disabled = true;
+            submitButton.style.display = 'none';  // 隐藏提交按钮
+            
+            // 添加立即跳转按钮
+            redirectButton = document.createElement('button');
+            redirectButton.type = 'button';
+            redirectButton.style.marginTop = '10px';
+            redirectButton.style.padding = '8px 16px';
+            redirectButton.style.borderRadius = '4px';
+            redirectButton.style.border = 'none';
+            redirectButton.style.backgroundColor = '#28a745';
+            redirectButton.style.color = 'white';
+            redirectButton.style.cursor = 'pointer';
+            redirectButton.style.width = '100%';
+            redirectButton.style.fontSize = '1em';
+            redirectButton.onclick = redirectNow;
+            
+            // 添加双语文本到按钮
+            const enSpan = document.createElement('span');
+            enSpan.className = 'lang-en';
+            const zhSpan = document.createElement('span');
+            zhSpan.className = 'lang-zh';
+            
+            redirectButton.appendChild(enSpan);
+            redirectButton.appendChild(zhSpan);
+            
+            // 将按钮添加到提交按钮的位置
+            submitButton.parentNode.insertBefore(redirectButton, submitButton.nextSibling);
+
+            function updateCountdownDisplay() {
+                if (countdownSeconds >= 0) {
+                    enSpan.textContent = translations.en.redirectNow.replace('{seconds}', countdownSeconds);
+                    zhSpan.textContent = translations.zh.redirectNow.replace('{seconds}', countdownSeconds);
+                } else {
+                    redirectNow();
+                }
+            }
+
+            updateCountdownDisplay();
+            countdownInterval = setInterval(() => {
+                countdownSeconds--;
+                updateCountdownDisplay();
+            }, 1000);
+
+            pageRedirectTimeout = setTimeout(redirectNow, redirectDelay);
+        }
+
+        if (form) {
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                
+                setBilingualTextDirectly(formMessageDiv, '', ''); // Clear previous messages
+                formMessageDiv.style.color = 'inherit';
+
+                if (!emailInput.checkValidity() || !emailInput.value.trim()) {
+                    setBilingualTextDirectly(formMessageDiv, translations.en.formMsgValidEmail, translations.zh.formMsgValidEmail);
+                    formMessageDiv.style.color = 'red';
+                    emailInput.focus();
+                    return;
+                }
+                if (!organizationInput.checkValidity() || !organizationInput.value.trim()) {
+                    setBilingualTextDirectly(formMessageDiv, translations.en.formMsgValidOrg, translations.zh.formMsgValidOrg);
+                    formMessageDiv.style.color = 'red';
+                    organizationInput.focus();
+                    return;
+                }
+
+                submitButton.disabled = true;
+                updateSubmitButtonText('submitButtonProcessing', 'submitButtonProcessing');
+                setBilingualTextDirectly(formMessageDiv, translations.en.formMsgProcessing, translations.zh.formMsgProcessing);
+                formMessageDiv.style.color = '#ffa500';
+
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' 
+                        }
+                    });
+
+                    if (response.ok) {
+                        setBilingualTextDirectly(formMessageDiv, translations.en.formMsgSuccess, translations.zh.formMsgSuccess);
+                        formMessageDiv.style.color = 'green';
+                        form.reset(); 
+                        // 清除倒计时消息
+                        countdownMessageDiv.innerHTML = '';
+                        startCountdownAndRedirect();
+                    } else {
+                        const data = await response.json().catch(() => ({})); // Gracefully handle non-JSON response
+                        let enError = translations.en.formMsgFailure;
+                        let zhError = translations.zh.formMsgFailure;
+
+                        if (data && data.errors && data.errors.length > 0) {
+                            // Assuming Formspree might not provide bilingual errors, we might need a mapping or show a generic one.
+                            // For simplicity, showing the first error or a generic one.
+                            const firstErrorMessage = data.errors[0].message; 
+                            // This is tricky as Formspree errors are likely monolingual.
+                            // We\'ll display the Formspree error directly, or enhance later if specific bilingual errors are needed.
+                            enError = "Error: " + firstErrorMessage;
+                            zhError = "错误：" + firstErrorMessage; // Simple prefix for now
+                        }
+                        setBilingualTextDirectly(formMessageDiv, enError, zhError);
+                        formMessageDiv.style.color = 'red';
+                        submitButton.disabled = false;
+                        updateSubmitButtonText('submitButton', 'submitButton');
+                    }
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    setBilingualTextDirectly(formMessageDiv, translations.en.formMsgNetworkError, translations.zh.formMsgNetworkError);
+                    formMessageDiv.style.color = 'red';
+                    submitButton.disabled = false;
+                    updateSubmitButtonText('submitButton', 'submitButton');
+                }
+            });
+        }
+
+        // 添加回车键提交功能
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                const activeElement = document.activeElement;
+                // 如果焦点在输入框上，且不是在提交按钮上
+                if (activeElement && 
+                    (activeElement === emailInput || activeElement === organizationInput)) {
+                    event.preventDefault();
+                    submitButton.click();
+                }
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            if (countdownInterval) clearInterval(countdownInterval);
+            if (pageRedirectTimeout) clearTimeout(pageRedirectTimeout);
+        });
+    </script>
+</body>
+</html> 
