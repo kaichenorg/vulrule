@@ -439,5 +439,9 @@
   "homepage.stats.ruleCategories.initialization": {
     "message": "Initialization",
     "description": "Initialization category label"
+  },
+  "homepage.nav.contact.title": {
+    "message": "Contact Us",
+    "description": "Contact Title"
   }
 }

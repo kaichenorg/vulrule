@@ -36,7 +36,7 @@ export default function QuickNavigation(): JSX.Element {
           {/* Navigation Card 2 */}
           <div className="col col--3 margin-bottom--lg">
             <Link to="/category/types" className={styles.navCard} style={{ textDecoration: 'none' }}>
-              <div className={styles.navIcon}>📋</div>
+              <div className={styles.navIcon}>🏷️</div>
               <div className={styles.navTitle}>
                 <Translate id="homepage.nav.rule-category.title" description="Rule Category Title">
                   规则分类
@@ -56,12 +56,12 @@ export default function QuickNavigation(): JSX.Element {
               <div className={styles.navIcon}>🛠️</div>
               <div className={styles.navTitle}>
                 <Translate id="homepage.nav.rule-tools.title" description="Rule Generation Tools Title">
-                  规则生成工具
+                  规则工具
                 </Translate>
               </div>
               <p className={styles.navDescription}>
                 <Translate id="homepage.nav.rule-tools.description" description="Rule Generation Tools Description">
-                  用于生成规则的工具
+                  按照生成工具浏览规则
                 </Translate>
               </p>
             </Link>
@@ -80,6 +80,23 @@ export default function QuickNavigation(): JSX.Element {
                 <Translate id="homepage.nav.about-us.description" description="About Us Description">
                   了解我们的团队和项目
                 </Translate>
+              </p>
+            </Link>
+          </div>
+        </div>
+
+        {/* Contact Email Section */}
+        <div className="row">
+          <div className="col col--12 text--center margin-top--lg">
+            <Link to="mailto:kaichenorg@gmail.com" className={styles.contactSection} style={{ textDecoration: 'none' }}>
+              <div className={styles.navIcon}>📧</div>
+              <div className={styles.contactTitle}>
+                <Translate id="homepage.nav.contact.title" description="Contact Title">
+                  联系我们
+                </Translate>
+              </div>
+              <p className={styles.contactEmail}>
+                kaichenorg@gmail.com
               </p>
             </Link>
           </div>
