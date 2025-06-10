@@ -46,6 +46,7 @@ def normalize_name(name):
     # ToLowercase and replace leading underscore with empty string
     name = name.lower()
     name = name.lstrip("_")
+    name = name.replace("\n", " ")
     return name
 
 def escape_markdown(text):
@@ -60,16 +61,21 @@ def generate_api(args, data, docs_dir):
     rules_by_labels = defaultdict(lambda: defaultdict(list))
     rules_by_libraries = defaultdict(list)
     for rule in data:
-        doc_content = TEMPLATES[args.language]["api"].render(
-            tool_name=rule["tool_name"],
-            lib_name=rule["lib_name"],
-            api_name=rule["api_name"],
-            description=escape_markdown(rule["rule"]["Description"]),
-            label=rule["rule"]["Label"][0],
-            param_index=rule["rule"]["Parameter-index"][0] if "Parameter-index" in rule["rule"] else "N/A",
-            cwe_type=rule["rule"]["cweType-and-QLCode"][0]["cweType"][0],
-            code=rule["rule"]["cweType-and-QLCode"][0]["QLCode"],
-        )
+        try:
+            doc_content = TEMPLATES[args.language]["api"].render(
+                tool_name=rule["tool_name"],
+                lib_name=rule["lib_name"],
+                api_name=normalize_name(rule["api_name"]),
+                description=escape_markdown(rule["rule"]["Description"]),
+                label=rule["rule"]["Label"][0],
+                param_index=rule["rule"]["Parameter-index"][0] if "Parameter-index" in rule["rule"] else "N/A",
+                cwe_type=rule["rule"]["cweType-and-QLCode"][0]["cweType"][0] if rule["rule"]["cweType-and-QLCode"][0]["cweType"] else "N/A",
+                code=rule["rule"]["cweType-and-QLCode"][0]["QLCode"],
+            )
+        except Exception as e:
+            print(rule)
+            print(f"Error generating documentation for {rule['lib_name']} {rule['api_name']}: {e}")
+            continue
         path = quote(f"projects/{normalize_name(rule['lib_name'])}/{normalize_name(rule['api_name'])}.md")
         doc_path = docs_dir / "projects" / normalize_name(rule["lib_name"]) / f'{normalize_name(rule["api_name"])}.md'
         doc_path.parent.mkdir(parents=True, exist_ok=True)

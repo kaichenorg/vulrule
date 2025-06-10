@@ -30,12 +30,7 @@ interface StatsData {
 }
 
 // Fallback data in case the JSON file can't be loaded
-const fallbackRuleCategories: RuleCategory[] = [
-  { name: "api pair", count: "0", icon: "🔄", color: "#4285F4" },
-  { name: "initialization", count: "0", icon: "🚀", color: "#FBBC05" },
-  { name: "parameter check", count: "0", icon: "🔍", color: "#8F44AD" },
-  { name: "return value check", count: "0", icon: "✅", color: "#F39C12" },
-];
+const fallbackRuleCategories: RuleCategory[] = [];
 
 const fallbackLibraryCategories: LibraryCategory[] = [
   // { name: "Loading...", count: "0" },
@@ -69,14 +64,6 @@ const calculateBarWidth = (
   return Math.min(percentage, 100);
 };
 
-// Function to look up a rule category by name
-const findCategoryByName = (categories: RuleCategory[], name: string): RuleCategory | undefined => {
-  return categories.find(category => category.name.toLowerCase() === name.toLowerCase());
-};
-
-// Fixed order of rule categories we want to display
-const ruleCategoryOrder = ["api pair", "initialization", "parameter check", "return value check"];
-
 export default function StatsDisplay(): React.ReactElement {
   // State to hold our statistics data
   const [statsData, setStatsData] = useState<StatsData>({
@@ -103,27 +90,11 @@ export default function StatsDisplay(): React.ReactElement {
     };
   }, [statsData]);
 
-  // Organize rule categories in a consistent order
+  // Sort rule categories by count for display
   const sortedRuleCategories = useMemo(() => {
-    // Create a copy of the original array to avoid mutation
-    const orderedCategories = [...ruleCategoryOrder].map(categoryName => {
-      // Find the category by name, case-insensitive
-      const foundCategory = findCategoryByName(statsData.ruleCategories, categoryName);
-      
-      // If the category exists in our data, return it; otherwise create a placeholder
-      return foundCategory || {
-        name: categoryName,
-        count: "0",
-        icon: categoryName === "api pair" ? "🔄" : 
-              categoryName === "initialization" ? "🚀" :
-              categoryName === "parameter check" ? "🔍" : "✅",
-        color: categoryName === "api pair" ? "#4285F4" : 
-               categoryName === "initialization" ? "#FBBC05" :
-               categoryName === "parameter check" ? "#8F44AD" : "#F39C12"
-      };
-    });
-    
-    return orderedCategories;
+    return [...statsData.ruleCategories].sort(
+      (a, b) => parseInt(b.count, 10) - parseInt(a.count, 10)
+    );
   }, [statsData.ruleCategories]);
 
   // Load the stats data from JSON file
@@ -176,8 +147,8 @@ export default function StatsDisplay(): React.ReactElement {
                 </Translate>
               </Heading>
               <div className={styles.statsContent}>
-                {/* Render rule categories in consistent order */}
-                {sortedRuleCategories.map((category, idx) => (
+                {/* Render top 6 rule categories, sorted by count */}
+                {sortedRuleCategories.slice(0, 6).map((category, idx) => (
                   <div key={idx} className={styles.statItem}>
                     <div
                       className={styles.statIcon}
@@ -189,38 +160,7 @@ export default function StatsDisplay(): React.ReactElement {
                     </div>
                     <div className={styles.statLabel}>
                       <Link to={`/labels/${category.name.toLowerCase()}`}>
-                        {category.name === "api pair" && (
-                          <Translate
-                            id="homepage.stats.ruleCategories.apipair"
-                            description="API pair category label"
-                          >
-                            API pair
-                          </Translate>
-                        )}
-                        {category.name === "initialization" && (
-                          <Translate
-                            id="homepage.stats.ruleCategories.initialization"
-                            description="Initialization category label"
-                          >
-                            Initialization
-                          </Translate>
-                        )}
-                        {category.name === "parameter check" && (
-                          <Translate
-                            id="homepage.stats.ruleCategories.parametercheck"
-                            description="Parameter check category label"
-                          >
-                            Parameter check
-                          </Translate>
-                        )}
-                        {category.name === "return value check" && (
-                          <Translate
-                            id="homepage.stats.ruleCategories.returnvaluecheck"
-                            description="Return value check category label"
-                          >
-                            Return value check
-                          </Translate>
-                        )}
+                        {category.name}
                       </Link>
                     </div>
                     <div className={styles.statBarContainer}>
@@ -240,6 +180,18 @@ export default function StatsDisplay(): React.ReactElement {
                     </div>
                   </div>
                 ))}
+                {statsData.ruleCategories.length > 6 && (
+                  <div className={styles.viewMore}>
+                    <Link to="/category/types">
+                      <Translate
+                        id="homepage.stats.ruleCategories.viewMore"
+                        description="View more categories link text"
+                      >
+                        View All Categories ...
+                      </Translate>
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
