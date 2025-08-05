@@ -255,7 +255,8 @@
                 countdownInitial: "Please complete and submit the form to continue.",
                 countdownInProgress: "{seconds} seconds until redirecting to the main page...",
                 countdownRedirecting: "Redirecting to the main page...",
-                redirectNow: "Redirect Now ({seconds}s)"
+                redirectNow: "Redirect Now ({seconds}s)",
+                formMsgInvalidDomain: "This email domain is not allowed. Please use the email address of your university/institution.",
             },
             zh: {
                 pageTitle: "信息登记",
@@ -276,7 +277,8 @@
                 countdownInitial: "请填写并提交表单以继续。",
                 countdownInProgress: "{seconds} 秒后将自动跳转到主页...",
                 countdownRedirecting: "正在跳转到主页...",
-                redirectNow: "立即跳转 ({seconds}秒)"
+                redirectNow: "立即跳转 ({seconds}秒)",
+                formMsgInvalidDomain: "不允许该电子邮件域名，请使用高校/单位所在邮箱。",
             }
         };
 
@@ -423,12 +425,40 @@
                 setBilingualTextDirectly(formMessageDiv, '', ''); // Clear previous messages
                 formMessageDiv.style.color = 'inherit';
 
-                if (!emailInput.checkValidity() || !emailInput.value.trim()) {
+                const emailValue = emailInput.value.trim();
+                const organizationValue = organizationInput.value.trim();
+
+                // 定义排除的常见域名
+                const excludedDomains = ["gmail.com","yahoo.com","yahoo.co.jp","hotmail.com","live.com","aol.com","icloud.com","mail.com","protonmail.com","gmx.com","zoho.com","yandex.com","yandex.ru","qq.com","126.com","163.com","sina.com","sina.cn","yeah.net","foxmail.com","tutanota.com","fastmail.com","hushmail.com","inbox.com","mail.ru","bk.ru","list.ru","rambler.ru","web.de","gmx.de"]; // 根据需求调整黑名单
+
+                // 验证电子邮件格式的函数（正则表达式）
+                function isValidEmailFormat(email) {
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    return emailRegex.test(email);
+                }
+
+                // 检查电子邮件域名是否在排除名单内
+                function isExcludedDomain(email) {
+                    const domain = email.split('@')[1];
+                    return excludedDomains.includes(domain);
+                }
+
+                // 验证电子邮件格式
+                if (!isValidEmailFormat(emailValue)) {
                     setBilingualTextDirectly(formMessageDiv, translations.en.formMsgValidEmail, translations.zh.formMsgValidEmail);
                     formMessageDiv.style.color = 'red';
                     emailInput.focus();
                     return;
                 }
+
+                // 验证电子邮件域名是否被排除
+                if (isExcludedDomain(emailValue)) {
+                    setBilingualTextDirectly(formMessageDiv, translations.en.formMsgInvalidDomain, translations.zh.formMsgInvalidDomain);
+                    formMessageDiv.style.color = 'red';
+                    emailInput.focus();
+                    return;
+                }
+
                 if (!organizationInput.checkValidity() || !organizationInput.value.trim()) {
                     setBilingualTextDirectly(formMessageDiv, translations.en.formMsgValidOrg, translations.zh.formMsgValidOrg);
                     formMessageDiv.style.color = 'red';
@@ -466,10 +496,7 @@
 
                         if (data && data.errors && data.errors.length > 0) {
                             // Assuming Formspree might not provide bilingual errors, we might need a mapping or show a generic one.
-                            // For simplicity, showing the first error or a generic one.
                             const firstErrorMessage = data.errors[0].message; 
-                            // This is tricky as Formspree errors are likely monolingual.
-                            // We\'ll display the Formspree error directly, or enhance later if specific bilingual errors are needed.
                             enError = "Error: " + firstErrorMessage;
                             zhError = "错误：" + firstErrorMessage; // Simple prefix for now
                         }
