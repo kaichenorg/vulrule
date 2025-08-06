@@ -127,6 +127,24 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  
+
+  plugins: [
+    function disableSourceMapAndMinimize() {
+      return {
+        name: 'disable-sourcemap-and-minimize',
+        configureWebpack() {
+          return {
+            // === 新增插件：禁用 source map 以减少内存消耗 ===
+            devtool: false,
+            optimization: {
+              minimize: false,
+            },
+          };
+        },
+      };
+    },
+  ],
 };
 
 export default config;
