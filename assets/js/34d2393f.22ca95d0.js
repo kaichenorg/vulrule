@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunkvulrule"] = self["webpackChunkvulrule"] || []).push([[522503],{
+
+/***/ 510948:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"categoryGeneratedIndex":{"title":"Types","description":"View the rules by type.","slug":"/category/types","permalink":"/vulrule/category/types","sidebar":"tutorialSidebar","navigation":{"previous":{"title":"GPTAid Generated Rules","permalink":"/vulrule/tools/GPTAid"},"next":{"title":"api pair","permalink":"/vulrule/labels/api pair"}}}}');
+
+/***/ })
+
+}]);
