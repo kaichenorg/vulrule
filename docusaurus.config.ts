@@ -39,7 +39,12 @@ const config: Config = {
     [
       'classic',
       {
-        docs: false,
+        docs: {
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          routeBasePath: '/'
+        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
